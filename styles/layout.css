@@ -41,6 +41,12 @@
   color: var(--ldr-ink);
   font-size: 1.05rem;
   line-height: 1.5;
+  /* Fill the whole slide so the background and the flex layouts (cover,
+     section, quote, end) cover the full height — not just the content.
+     min-height (not height) lets a slide grow if its content overflows,
+     rather than clipping it. */
+  min-height: 100%;
+  box-sizing: border-box;
   padding: 3rem 3.5rem;
 }
 
