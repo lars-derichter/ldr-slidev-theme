@@ -1,0 +1,19 @@
+/*
+ * Bare-minimal base styling for the ldr theme.
+ * Plain CSS on purpose — no UnoCSS @apply — so it stays easy to edit.
+ * Slidev's built-in layouts (default, center, cover, two-cols, ...) apply
+ * automatically; this file just sets the look on top of them.
+ */
+
+:root {
+  /* The default theme and many components read this variable. */
+  --slidev-theme-primary: #2563eb;
+}
+
+.slidev-layout {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.slidev-layout h1 {
+  color: var(--slidev-theme-primary);
+}

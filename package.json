@@ -1,0 +1,31 @@
+{
+  "name": "slidev-theme-ldr",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Personal Slidev theme for Lars De Richter.",
+  "author": "Lars De Richter",
+  "license": "Unlicense",
+  "keywords": [
+    "slidev-theme",
+    "slidev",
+    "theme"
+  ],
+  "engines": {
+    "slidev": ">=52.0.0"
+  },
+  "slidev": {
+    "themeName": "ldr",
+    "defaults": {
+      "aspectRatio": "16/9"
+    }
+  },
+  "scripts": {
+    "dev": "slidev example.md --open",
+    "build": "slidev build example.md",
+    "export": "slidev export example.md"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^52.10.1",
+    "vue": "^3.5.25"
+  }
+}
