@@ -236,6 +236,38 @@
   font-variant: small-caps;
 }
 
+/* Image beside a text column ----------------------------------------------- */
+.slidev-layout.ldr-image-side {
+  padding: 0;
+  display: flex;
+}
+.ldr-image-side__text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 7.5% 7%;
+}
+.ldr-image-side__text .ldr-eyebrow { font-size: 0.7rem; margin: 0 0 0.9em; }
+.ldr-image-side__text h2 { font-size: 1.75rem; line-height: 1.12; margin: 0 0 0.4em; }
+.ldr-image-side__text h2::after { content: none; }
+.ldr-image-side__caption { font-size: 1.05rem; font-style: italic; color: var(--ldr-ink-soft); margin: 0; }
+.ldr-image-side__panel {
+  flex: 0 0 44%;
+  position: relative;
+  background-color: var(--ldr-panel);
+  background-size: cover;
+  background-position: center;
+}
+.ldr-image-side--flip { flex-direction: row-reverse; }
+.ldr-image-side__credit {
+  position: absolute;
+  right: 6%; bottom: 7%;
+  font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  font-variant: small-caps;
+}
+
 /* End / thanks ------------------------------------------------------------- */
 .slidev-layout.ldr-end {
   background-color: var(--ldr-paper-deep);

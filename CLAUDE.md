@@ -31,7 +31,7 @@ a theme only needs to override what it wants to change. This theme ships
 `styles/` (tokens + typography in `layout.css`, code framing in `code.css`),
 `setup/shiki.ts` (a palette-matched Shiki theme), a `Footer` component, and
 custom layouts: `cover`, `section`, `default` (adds the footer), `two-cols-ldr`,
-`quote`, `image-full`, and `end`. Palette/type live as `--ldr-*` CSS variables
+`quote`, `image-full`, `image-side`, and `end`. Palette/type live as `--ldr-*` CSS variables
 at the top of `layout.css`. Keep additions minimal and intentional.
 
 `example.md` uses `theme: ./` to preview the theme locally (`npm run dev`).
