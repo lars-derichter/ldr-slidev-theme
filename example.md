@@ -1,28 +1,97 @@
 ---
 # `theme: ./` loads this repo as the theme — used to preview while developing.
 theme: ./
-title: ldr-slidev-theme
-class: text-center
+title: The shape of an argument
 mdc: true
 ---
 
-# ldr-slidev-theme
+<!--
+  Preview deck for the ldr theme. Run `npm run dev` to open it.
+  It walks through every custom layout the theme ships.
+-->
 
-Personal Slidev theme — preview deck
+---
+layout: cover
+eyebrow: A lecture in three movements
+presenter: Lars De Richter
+affiliation: Thomas More Hogeschool
+---
+
+# The shape of an argument
+
+Structure, rhythm, and restraint in technical writing.
+
+---
+layout: section
+number: "01"
+eyebrow: First movement
+---
+
+# Foundations
+
+Where a good sentence begins, and why the reader keeps reading.
 
 ---
 
-## A content slide
+## Three habits of clear prose
 
-- The primary color tints the heading above
-- Built-in layouts still work out of the box
-- Edit `styles/layout.css` to change the look
+- **One idea per sentence.** Let the full stop do its work before you reach for a comma.
+- **Concrete before abstract.** Name the thing, then explain what it means.
+- **Read it aloud.** If you run out of breath, the reader already has.
 
 ---
-layout: center
-class: text-center
+layout: two-cols-ldr
 ---
 
-# Thanks
+# Two ways to revise
 
-Built with [Slidev](https://sli.dev)
+::left::
+
+<div class="ldr-eyebrow" style="color: var(--ldr-sage)">Top down</div>
+
+Start from the claim. Check that every paragraph earns its place and serves the argument before you polish a single sentence.
+
+::right::
+
+<div class="ldr-eyebrow" style="color: var(--ldr-maple)">Bottom up</div>
+
+Start from the words. Cut the dead ones, tighten the verbs, and let the structure reveal itself as the prose gets leaner.
+
+---
+
+## Het gemiddelde berekenen
+
+```java
+// Bereken het gemiddelde van drie cijfers
+public double gemiddelde(int a, int b, int c) {
+    double som = a + b + c;
+    System.out.println("Gemiddelde: " + som / 3.0);
+    return som / 3.0;
+}
+```
+
+---
+layout: quote
+author: William Strunk Jr.
+---
+
+Vigorous writing is concise. A sentence should contain no unnecessary words.
+
+---
+layout: image-full
+image: /forest.jpg
+eyebrow: Figure 3
+caption: Many small parts, one continuous shape.
+credit: Photo · Unsplash
+---
+
+### A canopy is a kind of paragraph
+
+---
+layout: end
+contact: lars.derichter@thomasmore.be · @ldr
+---
+
+# Thank you
+
+Questions are welcome.
