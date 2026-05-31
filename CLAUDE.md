@@ -27,8 +27,12 @@ bump or reinstall to pull new commits, or pin a tag with `#vX.Y.Z`.
 A Slidev theme contributes any of: `layouts/*.vue`, `components/*.vue`,
 `styles/` (imported globally via `styles/index.ts`), `setup/*.ts` hooks, and
 config. Slidev provides built-in layouts (default, center, cover, two-cols, …);
-a theme only needs to override what it wants to change. This theme currently
-ships just `styles/` — keep additions minimal and intentional.
+a theme only needs to override what it wants to change. This theme ships
+`styles/` (tokens + typography in `layout.css`, code framing in `code.css`),
+`setup/shiki.ts` (a palette-matched Shiki theme), a `Footer` component, and
+custom layouts: `cover`, `section`, `default` (adds the footer), `two-cols-ldr`,
+`quote`, `image-full`, and `end`. Palette/type live as `--ldr-*` CSS variables
+at the top of `layout.css`. Keep additions minimal and intentional.
 
 `example.md` uses `theme: ./` to preview the theme locally (`npm run dev`).
 
