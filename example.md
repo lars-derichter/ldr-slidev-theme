@@ -59,14 +59,14 @@ Start from the words. Cut the dead ones, tighten the verbs, and let the structur
 
 ---
 
-## Het gemiddelde berekenen
+## Calculate the average
 
 ```java
-// Bereken het gemiddelde van drie cijfers
-public double gemiddelde(int a, int b, int c) {
-    double som = a + b + c;
-    System.out.println("Gemiddelde: " + som / 3.0);
-    return som / 3.0;
+// Calculate the average of three numbers
+public double average(int a, int b, int c) {
+    double sum = a + b + c;
+    System.out.println("Average: " + sum / 3.0);
+    return sum / 3.0;
 }
 ```
 
