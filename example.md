@@ -3,19 +3,17 @@
 theme: ./
 title: The shape of an argument
 mdc: true
+
+layout: cover
+eyebrow: A lecture in three movements
+presenter: Lars De Richter
+affiliation: Thomas More Hogeschool
 ---
 
 <!--
   Preview deck for the ldr theme. Run `npm run dev` to open it.
   It walks through every custom layout the theme ships.
 -->
-
----
-layout: cover
-eyebrow: A lecture in three movements
-presenter: Lars De Richter
-affiliation: Thomas More Hogeschool
----
 
 # The shape of an argument
 
