@@ -22,10 +22,13 @@
   "scripts": {
     "dev": "slidev example.md --open",
     "build": "slidev build example.md",
-    "export": "slidev export example.md"
+    "export": "slidev export example.md",
+    "format": "prettier --write ."
   },
   "devDependencies": {
     "@slidev/cli": "^52.10.1",
+    "prettier": "^3.8.3",
+    "prettier-plugin-slidev": "^1.0.5",
     "vue": "^3.5.25"
   }
 }
