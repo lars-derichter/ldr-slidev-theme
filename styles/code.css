@@ -1,0 +1,38 @@
+/*
+ * Code blocks for the ldr theme.
+ * Token colours come from `setup/shiki.ts` (a custom parchment light theme);
+ * this file only frames the block — mono font, inset panel, maple spine.
+ */
+
+.slidev-layout .shiki,
+.slidev-layout code,
+.slidev-layout pre {
+  font-family: var(--ldr-mono);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+/* The code panel: inset parchment surface with a maple left spine. */
+.slidev-layout pre.shiki,
+.slidev-layout .slidev-code-wrapper pre {
+  background: var(--ldr-panel) !important;
+  border: 1px solid var(--ldr-rule);
+  border-left: 3px solid var(--ldr-maple);
+  border-radius: 4px;
+  padding: 1.1em 1.3em;
+}
+
+/* Inline code — subtle tint, no heavy box. */
+.slidev-layout :not(pre) > code {
+  background: var(--ldr-panel);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  font-size: 0.9em;
+  color: var(--ldr-forest-deep);
+}
+
+/* Line numbers, when enabled with `{lines:true}`. */
+.slidev-layout .shiki .line-number {
+  color: #B7AC90;
+  margin-right: 1.4em;
+}
