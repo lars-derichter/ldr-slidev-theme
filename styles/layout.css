@@ -1,19 +1,247 @@
 /*
- * Bare-minimal base styling for the ldr theme.
- * Plain CSS on purpose — no UnoCSS @apply — so it stays easy to edit.
- * Slidev's built-in layouts (default, center, cover, two-cols, ...) apply
- * automatically; this file just sets the look on top of them.
+ * ldr theme — base styling.
+ * Plain CSS on purpose (no UnoCSS @apply) so it stays easy to edit.
+ * A calm, typography-led, humanist/manuscript look: warm parchment ground,
+ * Gentium Book Plus throughout, forest/sage primary with a maple-red accent.
+ *
+ * Slidev's built-in layouts (default, center, two-cols, ...) still apply;
+ * the custom layouts in `layouts/` add the cover, section, quote, image and
+ * end designs on top of these tokens.
  */
 
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap');
+
 :root {
-  /* The default theme and many components read this variable. */
-  --slidev-theme-primary: #2563eb;
+  /* Palette ------------------------------------------------------------- */
+  --ldr-paper:        #F4EDDC; /* warm parchment ground            */
+  --ldr-paper-deep:   #EFE7D2; /* deeper ground (cover/section/...) */
+  --ldr-panel:        #EDE4CE; /* code panel / inset surface        */
+  --ldr-ink:          #2A2925; /* warm near-black body text         */
+  --ldr-ink-soft:     #5E584C; /* muted ink (subtitles, captions)   */
+  --ldr-ink-faint:    #8A8270; /* faint ink (footers, credits)      */
+  --ldr-forest:       #38543E; /* primary accent — structural marks */
+  --ldr-forest-deep:  #2C4632;
+  --ldr-sage:         #7E9A7C; /* soft secondary accent             */
+  --ldr-maple:        #9E3B2D; /* second accent — autumn maple red  */
+  --ldr-ochre:        #B07D2B; /* numbers / tertiary warm accent    */
+  --ldr-rule:         #D8CDB3; /* faint hairlines                   */
+
+  /* Type ---------------------------------------------------------------- */
+  --ldr-serif: 'Gentium Book Plus', Georgia, 'Times New Roman', serif;
+  --ldr-mono:  'IBM Plex Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  /* Slidev hooks — components that read these pick up the forest accent.  */
+  --slidev-theme-primary: var(--ldr-forest);
 }
 
+/* Base slide --------------------------------------------------------------- */
 .slidev-layout {
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: var(--ldr-serif);
+  background-color: var(--ldr-paper);
+  color: var(--ldr-ink);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  padding: 3rem 3.5rem;
 }
 
-.slidev-layout h1 {
-  color: var(--slidev-theme-primary);
+/* Headings ----------------------------------------------------------------- */
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3,
+.slidev-layout h4 {
+  font-family: var(--ldr-serif);
+  color: var(--ldr-ink);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.12;
 }
+
+.slidev-layout h1 { font-size: 2.4rem; margin: 0 0 0.5rem; }
+.slidev-layout h2 { font-size: 1.9rem; margin: 0 0 0.6rem; }
+.slidev-layout h3 { font-size: 1.4rem; margin: 0 0 0.4rem; }
+
+/* A short maple rule under content headings (the recurring accent mark).   */
+.slidev-layout.default h1::after,
+.slidev-layout.default h2::after,
+.slidev-layout.ldr-two-cols h2::after {
+  content: "";
+  display: block;
+  width: 54px;
+  height: 2px;
+  margin: 0.55em 0 0;
+  background: var(--ldr-maple);
+}
+
+/* Body text ---------------------------------------------------------------- */
+.slidev-layout p { margin: 0 0 0.8em; }
+.slidev-layout em, .slidev-layout i { font-style: italic; }
+.slidev-layout strong, .slidev-layout b { font-weight: 700; }
+.slidev-layout a { color: var(--ldr-forest); text-underline-offset: 3px; }
+
+/* Lists — em-dash markers in sage instead of bullets. ---------------------- */
+.slidev-layout ul {
+  list-style: none;
+  padding-left: 0;
+}
+.slidev-layout ul > li {
+  position: relative;
+  padding-left: 1.6em;
+  margin: 0 0 0.7em;
+  line-height: 1.45;
+}
+.slidev-layout ul > li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--ldr-sage);
+  font-weight: 700;
+}
+.slidev-layout ol { padding-left: 1.3em; }
+.slidev-layout ol > li { margin: 0 0 0.7em; }
+.slidev-layout ol > li::marker { color: var(--ldr-maple); }
+
+/* Shared eyebrow (letterspaced small-cap label). --------------------------- */
+.ldr-eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ldr-forest);
+  font-weight: 700;
+  margin: 0;
+}
+
+/* A reusable short rule, e.g. <hr class="ldr-rule-maple">. ----------------- */
+.ldr-rule-maple {
+  height: 2px; border: 0; width: 46px;
+  background: var(--ldr-maple);
+  margin: 0.4em 0 0.7em;
+}
+
+/* Footer (running header on content slides). ------------------------------- */
+.ldr-footer {
+  position: absolute;
+  left: 3.5rem; right: 3.5rem; bottom: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--ldr-serif);
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  color: var(--ldr-ink-faint);
+}
+.ldr-footer .ldr-foot-num { color: var(--ldr-maple); }
+
+/* ===========================================================================
+ * Custom layout looks
+ * ======================================================================== */
+
+/* Cover -------------------------------------------------------------------- */
+.slidev-layout.ldr-cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.ldr-cover__top { display: flex; align-items: center; gap: 14px; }
+.ldr-cover__tick { display: inline-block; width: 26px; height: 2px; background: var(--ldr-maple); }
+.ldr-cover__main :is(h1) { font-size: 3rem; margin: 0 0 0.3em; }
+.ldr-cover__main :is(h1)::after { content: none; }
+.ldr-cover__main p { font-size: 1.3rem; font-style: italic; color: var(--ldr-ink-soft); max-width: 80%; margin: 0; }
+.ldr-cover__by { display: flex; align-items: baseline; gap: 10px; font-size: 1rem; color: var(--ldr-ink-soft); }
+.ldr-cover__by .name { color: var(--ldr-forest); font-weight: 700; }
+.ldr-cover__by .sep { opacity: 0.5; }
+
+/* Section divider ---------------------------------------------------------- */
+.slidev-layout.ldr-section {
+  background-color: var(--ldr-paper-deep);
+  display: flex; flex-direction: column; justify-content: center;
+}
+.ldr-section__num { font-size: 4rem; line-height: 1; color: var(--ldr-sage); font-weight: 700; margin: 0 0 0.15em; }
+.ldr-section :is(h1) { font-size: 2.6rem; margin: 0 0 0.35em; }
+.ldr-section :is(h1)::after {
+  content: ""; display: block; width: 46px; height: 2px;
+  background: var(--ldr-maple); margin: 0.3em 0 0;
+}
+.ldr-section :is(p) { font-size: 1.2rem; font-style: italic; color: var(--ldr-ink-soft); max-width: 60%; margin: 0.7em 0 0; }
+
+/* Two columns -------------------------------------------------------------- */
+.slidev-layout.ldr-two-cols { display: flex; flex-direction: column; }
+.ldr-two-cols__cols {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 30px;
+  flex: 1;
+  align-items: start;
+}
+.ldr-two-cols__divider { background: var(--ldr-rule); align-self: stretch; }
+.ldr-two-cols__cols .ldr-eyebrow { font-size: 0.7rem; margin: 0 0 0.6em; }
+
+/* Quote -------------------------------------------------------------------- */
+.slidev-layout.ldr-quote {
+  background-color: var(--ldr-paper-deep);
+  display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+}
+.slidev-layout.ldr-quote blockquote {
+  border: 0; margin: 0; padding: 0;
+  font-size: 1.9rem; line-height: 1.4; font-style: italic; font-weight: 400;
+  max-width: 86%;
+  position: relative;
+}
+.slidev-layout.ldr-quote blockquote::before {
+  content: "\201C";
+  display: block;
+  font-size: 6rem; line-height: 0.7;
+  color: var(--ldr-sage); font-weight: 700;
+  margin: 0 0 0.05em;
+}
+.ldr-quote__by {
+  margin: 1.2em 0 0;
+  font-size: 0.95rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ldr-forest); font-weight: 700;
+}
+.ldr-quote__by::before {
+  content: ""; display: block; width: 40px; height: 2px;
+  background: var(--ldr-maple); margin: 0 0 0.9em;
+}
+
+/* Full-bleed image with overlaid caption ----------------------------------- */
+.slidev-layout.ldr-image-full {
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+}
+.ldr-image-full__caption {
+  position: absolute;
+  left: 7%; bottom: 9%;
+  max-width: 60%;
+  background: rgba(244, 237, 220, 0.93);
+  border-left: 3px solid var(--ldr-maple);
+  border-radius: 4px;
+  padding: 1em 1.3em;
+}
+.ldr-image-full__caption .ldr-eyebrow { font-size: 0.7rem; margin: 0 0 0.4em; }
+.ldr-image-full__caption h3 { font-size: 1.35rem; margin: 0 0 0.25em; }
+.ldr-image-full__caption h3::after { content: none; }
+.ldr-image-full__caption p { font-size: 0.95rem; font-style: italic; color: var(--ldr-ink-soft); margin: 0; }
+.ldr-image-full__credit {
+  position: absolute;
+  right: 6%; bottom: 7%;
+  font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  font-variant: small-caps;
+}
+
+/* End / thanks ------------------------------------------------------------- */
+.slidev-layout.ldr-end {
+  background-color: var(--ldr-paper-deep);
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center;
+}
+.ldr-end :is(h1) { font-size: 2.8rem; margin: 0.5em 0 0.1em; }
+.ldr-end :is(h1)::after {
+  content: ""; display: block; width: 44px; height: 2px;
+  background: var(--ldr-maple); margin: 0.2em auto 0;
+}
+.ldr-end :is(p) { font-size: 1.15rem; font-style: italic; color: var(--ldr-ink-soft); margin: 0.9em 0 1.2em; }
+.ldr-end__contact { font-style: normal !important; font-size: 0.95rem; letter-spacing: 0.06em; color: var(--ldr-ink-soft); }
+.ldr-mark { color: var(--ldr-forest); }
+.ldr-mark .seed { color: var(--ldr-maple); }
