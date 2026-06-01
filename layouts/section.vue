@@ -18,7 +18,7 @@ defineProps<{
 <template>
   <div class="slidev-layout ldr-section">
     <p class="ldr-section__num" v-if="number">{{ number }}</p>
-    <p class="ldr-eyebrow" v-if="eyebrow">{{ eyebrow }}</p>
+    <p class="eyebrow" v-if="eyebrow">{{ eyebrow }}</p>
     <slot />
   </div>
 </template>

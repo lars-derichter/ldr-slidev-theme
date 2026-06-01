@@ -21,7 +21,7 @@ defineProps<{
   <div class="slidev-layout ldr-cover">
     <div class="ldr-cover__top" v-if="eyebrow">
       <span class="ldr-cover__tick" />
-      <p class="ldr-eyebrow">{{ eyebrow }}</p>
+      <p class="eyebrow">{{ eyebrow }}</p>
     </div>
 
     <div class="ldr-cover__main">

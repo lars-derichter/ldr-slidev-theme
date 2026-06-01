@@ -38,7 +38,7 @@ const bg = computed(() => {
     :style="bg ? { backgroundImage: `url(${bg})` } : undefined"
   >
     <div class="ldr-image-full__caption">
-      <p class="ldr-eyebrow" v-if="eyebrow">{{ eyebrow }}</p>
+      <p class="eyebrow" v-if="eyebrow">{{ eyebrow }}</p>
       <slot />
       <p v-if="caption">{{ caption }}</p>
     </div>

@@ -41,7 +41,7 @@ const imageLeft = computed(() => props.side === 'left')
     :class="{ 'ldr-image-side--flip': imageLeft }"
   >
     <div class="ldr-image-side__text">
-      <p class="ldr-eyebrow" v-if="eyebrow">{{ eyebrow }}</p>
+      <p class="eyebrow" v-if="eyebrow">{{ eyebrow }}</p>
       <slot />
       <p class="ldr-image-side__caption" v-if="caption">{{ caption }}</p>
     </div>

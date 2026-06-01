@@ -107,7 +107,7 @@
 .slidev-layout ol > li::marker { color: var(--ldr-maple); }
 
 /* Shared eyebrow (letterspaced small-cap label). --------------------------- */
-.ldr-eyebrow {
+.eyebrow {
   font-size: 0.8rem;
   letter-spacing: 0.26em;
   text-transform: uppercase;
