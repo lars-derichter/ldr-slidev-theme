@@ -33,9 +33,9 @@ Where a good sentence begins, and why the reader keeps reading.
 
 ## Three habits of clear prose
 
-- **One idea per sentence.** Let the full stop do its work before you reach for a comma.
+- **One idea per sentence.** Let the _full stop_ do its work before you reach for a comma.
 - **Concrete before abstract.** Name the thing, then explain what it means.
-- **Read it aloud.** If you run out of breath, the reader already has.
+- **Read it aloud.** If you run out of [breath,](https://example.com) the reader already has.
 
 ---
 layout: two-cols-ldr

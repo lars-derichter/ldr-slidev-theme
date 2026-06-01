@@ -9,26 +9,26 @@
  * end designs on top of these tokens.
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap");
 
 :root {
   /* Palette ------------------------------------------------------------- */
-  --ldr-paper:        #F4EDDC; /* warm parchment ground            */
-  --ldr-paper-deep:   #EFE7D2; /* deeper ground (cover/section/...) */
-  --ldr-panel:        #EDE4CE; /* code panel / inset surface        */
-  --ldr-ink:          #2A2925; /* warm near-black body text         */
-  --ldr-ink-soft:     #5E584C; /* muted ink (subtitles, captions)   */
-  --ldr-ink-faint:    #8A8270; /* faint ink (footers, credits)      */
-  --ldr-forest:       #38543E; /* primary accent — structural marks */
-  --ldr-forest-deep:  #2C4632;
-  --ldr-sage:         #7E9A7C; /* soft secondary accent             */
-  --ldr-maple:        #9E3B2D; /* second accent — autumn maple red  */
-  --ldr-ochre:        #B07D2B; /* numbers / tertiary warm accent    */
-  --ldr-rule:         #D8CDB3; /* faint hairlines                   */
+  --ldr-paper: #f4eddc; /* warm parchment ground            */
+  --ldr-paper-deep: #efe7d2; /* deeper ground (cover/section/...) */
+  --ldr-panel: #ede4ce; /* code panel / inset surface        */
+  --ldr-ink: #2a2925; /* warm near-black body text         */
+  --ldr-ink-soft: #5e584c; /* muted ink (subtitles, captions)   */
+  --ldr-ink-faint: #8a8270; /* faint ink (footers, credits)      */
+  --ldr-forest: #38543e; /* primary accent — structural marks */
+  --ldr-forest-deep: #2c4632;
+  --ldr-sage: #7e9a7c; /* soft secondary accent             */
+  --ldr-maple: #9e3b2d; /* second accent — autumn maple red  */
+  --ldr-ochre: #b07d2b; /* numbers / tertiary warm accent    */
+  --ldr-rule: #d8cdb3; /* faint hairlines                   */
 
   /* Type ---------------------------------------------------------------- */
-  --ldr-serif: 'Gentium Book Plus', Georgia, 'Times New Roman', serif;
-  --ldr-mono:  'IBM Plex Mono', ui-monospace, 'SFMono-Regular', monospace;
+  --ldr-serif: "Gentium Book Plus", Georgia, "Times New Roman", serif;
+  --ldr-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
 
   /* Slidev hooks — components that read these pick up the forest accent.  */
   --slidev-theme-primary: var(--ldr-forest);
@@ -62,9 +62,18 @@
   line-height: 1.12;
 }
 
-.slidev-layout h1 { font-size: 2.4rem; margin: 0 0 0.5rem; }
-.slidev-layout h2 { font-size: 1.9rem; margin: 0 0 0.6rem; }
-.slidev-layout h3 { font-size: 1.4rem; margin: 0 0 0.4rem; }
+.slidev-layout h1 {
+  font-size: 2.4rem;
+  margin: 0 0 0.5rem;
+}
+.slidev-layout h2 {
+  font-size: 1.9rem;
+  margin: 0 0 0.6rem;
+}
+.slidev-layout h3 {
+  font-size: 1.4rem;
+  margin: 0 0 0.4rem;
+}
 
 /* Heading colour by layout. Statement slides (cover, content, two-cols, end)
    take maple; sectioning and figure slides (section, image) take forest. Every
@@ -92,15 +101,28 @@
   display: block;
   width: 40px;
   height: 2px;
-  margin: 0.55em 0 0;
+  margin: 0.6em 0 1em;
   background: var(--ldr-forest);
 }
 
 /* Body text ---------------------------------------------------------------- */
-.slidev-layout p { margin: 0 0 0.8em; }
-.slidev-layout em, .slidev-layout i { font-style: italic; color: var(--ldr-sage); }
-.slidev-layout strong, .slidev-layout b { font-weight: 700; color: var(--ldr-forest); }
-.slidev-layout a { color: var(--ldr-forest); text-underline-offset: 3px; }
+.slidev-layout p {
+  margin: 0 0 0.8em;
+}
+.slidev-layout em,
+.slidev-layout i {
+  font-style: italic;
+  color: var(--ldr-sage);
+}
+.slidev-layout strong,
+.slidev-layout b {
+  font-weight: 700;
+  color: var(--ldr-forest);
+}
+.slidev-layout a {
+  color: var(--ldr-sage);
+  text-underline-offset: 3px;
+}
 
 /* Lists — em-dash markers in sage instead of bullets. ---------------------- */
 .slidev-layout ul {
@@ -120,9 +142,15 @@
   color: var(--ldr-sage);
   font-weight: 700;
 }
-.slidev-layout ol { padding-left: 1.3em; }
-.slidev-layout ol > li { margin: 0 0 0.7em; }
-.slidev-layout ol > li::marker { color: var(--ldr-maple); }
+.slidev-layout ol {
+  padding-left: 1.3em;
+}
+.slidev-layout ol > li {
+  margin: 0 0 0.7em;
+}
+.slidev-layout ol > li::marker {
+  color: var(--ldr-maple);
+}
 
 /* Shared eyebrow (letterspaced small-cap label). --------------------------- */
 .eyebrow {
@@ -137,23 +165,43 @@
 /* Eyebrows that label content or a figure take sage — on content/code (default
    layout) and on the image layouts (handled in their own blocks). Cover and
    section eyebrows stay forest, reading as kickers rather than labels. */
-.slidev-layout.default .eyebrow { color: var(--ldr-sage); }
+.slidev-layout.default .eyebrow {
+  color: var(--ldr-sage);
+}
 
 /* Palette text-colour utilities. Apply in Markdown (MDC) on the same line as the
    text, e.g. `Bottom up {.eyebrow.maple}` or `Heads up {.maple}`. Marked
    !important so they win over the scoped eyebrow and heading colours above. */
-.forest      { color: var(--ldr-forest) !important; }
-.forest-deep { color: var(--ldr-forest-deep) !important; }
-.sage        { color: var(--ldr-sage) !important; }
-.maple       { color: var(--ldr-maple) !important; }
-.ochre       { color: var(--ldr-ochre) !important; }
-.ink         { color: var(--ldr-ink) !important; }
-.ink-soft    { color: var(--ldr-ink-soft) !important; }
-.ink-faint   { color: var(--ldr-ink-faint) !important; }
+.forest {
+  color: var(--ldr-forest) !important;
+}
+.forest-deep {
+  color: var(--ldr-forest-deep) !important;
+}
+.sage {
+  color: var(--ldr-sage) !important;
+}
+.maple {
+  color: var(--ldr-maple) !important;
+}
+.ochre {
+  color: var(--ldr-ochre) !important;
+}
+.ink {
+  color: var(--ldr-ink) !important;
+}
+.ink-soft {
+  color: var(--ldr-ink-soft) !important;
+}
+.ink-faint {
+  color: var(--ldr-ink-faint) !important;
+}
 
 /* A reusable short rule, e.g. <hr class="ldr-rule-maple">. ----------------- */
 .ldr-rule-maple {
-  height: 2px; border: 0; width: 46px;
+  height: 2px;
+  border: 0;
+  width: 46px;
   background: var(--ldr-maple);
   margin: 0.4em 0 0.7em;
 }
@@ -161,7 +209,9 @@
 /* Footer (running header on content slides). ------------------------------- */
 .ldr-footer {
   position: absolute;
-  left: 3.5rem; right: 3.5rem; bottom: 1.2rem;
+  left: 3.5rem;
+  right: 3.5rem;
+  bottom: 1.2rem;
   display: flex;
   justify-content: space-between;
   font-family: var(--ldr-serif);
@@ -170,7 +220,9 @@
   font-size: 0.8rem;
   color: var(--ldr-sage);
 }
-.ldr-footer .ldr-foot-num { color: var(--ldr-maple); }
+.ldr-footer .ldr-foot-num {
+  color: var(--ldr-maple);
+}
 
 /* ===========================================================================
  * Custom layout looks
@@ -182,31 +234,88 @@
   flex-direction: column;
   justify-content: space-between;
 }
-.ldr-cover__top { display: flex; align-items: center; gap: 14px; }
-.ldr-cover__tick { display: inline-block; width: 26px; height: 2px; background: var(--ldr-forest); }
-.ldr-cover__main :is(h1) { font-size: 3rem; margin: 0 0 0.3em; }
-.ldr-cover__main :is(h1)::after { content: none; }
-.ldr-cover__main p { font-size: 1.3rem; font-style: italic; color: var(--ldr-ink); max-width: 80%; margin: 0; }
-.ldr-cover__by { display: flex; align-items: baseline; gap: 10px; font-size: 1rem; color: var(--ldr-ink-soft); }
-.ldr-cover__by .name { color: var(--ldr-forest); font-weight: 700; }
-.ldr-cover__by .ldr-cover__aff { color: var(--ldr-ink-faint); }
-.ldr-cover__by .sep { opacity: 0.5; }
+.ldr-cover__top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.ldr-cover__tick {
+  display: inline-block;
+  width: 26px;
+  height: 2px;
+  background: var(--ldr-forest);
+}
+.ldr-cover__main :is(h1) {
+  font-size: 3rem;
+  margin: 0 0 0.3em;
+}
+.ldr-cover__main :is(h1)::after {
+  content: none;
+}
+.ldr-cover__main p {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--ldr-ink);
+  max-width: 80%;
+  margin: 0;
+}
+.ldr-cover__by {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 1rem;
+  color: var(--ldr-ink-soft);
+}
+.ldr-cover__by .name {
+  color: var(--ldr-forest);
+  font-weight: 700;
+}
+.ldr-cover__by .ldr-cover__aff {
+  color: var(--ldr-ink-faint);
+}
+.ldr-cover__by .sep {
+  opacity: 0.5;
+}
 
 /* Section divider ---------------------------------------------------------- */
 .slidev-layout.ldr-section {
   background-color: var(--ldr-paper-deep);
-  display: flex; flex-direction: column; justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.ldr-section__num { font-size: 4rem; line-height: 1; color: var(--ldr-sage); font-weight: 700; margin: 0 0 0.15em; }
-.ldr-section :is(h1) { font-size: 2.6rem; margin: 0 0 0.35em; }
+.ldr-section__num {
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--ldr-sage);
+  font-weight: 700;
+  margin: 0 0 0.15em;
+}
+.ldr-section :is(h1) {
+  font-size: 2.6rem;
+  margin: 0 0 0.35em;
+}
 .ldr-section :is(h1)::after {
-  content: ""; display: block; width: 40px; height: 2px;
-  background: var(--ldr-maple); margin: 0.3em 0 0;
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--ldr-maple);
+  margin: 0.3em 0 0;
 }
-.ldr-section :is(p) { font-size: 1.2rem; font-style: italic; color: var(--ldr-ink-soft); max-width: 60%; margin: 0.7em 0 0; }
+.ldr-section :is(p) {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--ldr-ink-soft);
+  max-width: 60%;
+  margin: 0.7em 0 0;
+}
 
 /* Two columns -------------------------------------------------------------- */
-.slidev-layout.ldr-two-cols { display: flex; flex-direction: column; }
+.slidev-layout.ldr-two-cols {
+  display: flex;
+  flex-direction: column;
+}
 .ldr-two-cols__cols {
   display: grid;
   grid-template-columns: 1fr 1px 1fr;
@@ -214,35 +323,58 @@
   flex: 1;
   align-items: start;
 }
-.ldr-two-cols__divider { background: var(--ldr-sage); align-self: stretch; }
-.ldr-two-cols__cols .eyebrow { font-size: 0.7rem; margin: 0 0 0.6em; }
+.ldr-two-cols__divider {
+  background: var(--ldr-sage);
+  align-self: stretch;
+}
+.ldr-two-cols__cols .eyebrow {
+  font-size: 0.7rem;
+  margin: 0 0 0.6em;
+}
 
 /* Quote -------------------------------------------------------------------- */
 .slidev-layout.ldr-quote {
   background-color: var(--ldr-paper-deep);
-  display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 .slidev-layout.ldr-quote blockquote {
-  border: 0; margin: 0; padding: 0;
-  font-size: 1.9rem; line-height: 1.4; font-style: italic; font-weight: 400;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 1.9rem;
+  line-height: 1.4;
+  font-style: italic;
+  font-weight: 400;
   max-width: 86%;
   position: relative;
 }
 .slidev-layout.ldr-quote blockquote::before {
   content: "\201C";
   display: block;
-  font-size: 6rem; line-height: 0.7;
-  color: var(--ldr-sage); font-weight: 700;
+  font-size: 6rem;
+  line-height: 0.7;
+  color: var(--ldr-sage);
+  font-weight: 700;
   margin: 0 0 0.05em;
 }
 .ldr-quote__by {
   margin: 1.2em 0 0;
-  font-size: 0.95rem; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--ldr-maple); font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ldr-maple);
+  font-weight: 700;
 }
 .ldr-quote__by::before {
-  content: ""; display: block; width: 40px; height: 2px;
-  background: var(--ldr-forest); margin: 0 0 0.9em;
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--ldr-forest);
+  margin: 0 0 0.9em;
 }
 
 /* Full-bleed image with overlaid caption ----------------------------------- */
@@ -253,21 +385,39 @@
 }
 .ldr-image-full__caption {
   position: absolute;
-  left: 7%; bottom: 9%;
+  left: 7%;
+  bottom: 9%;
   max-width: 60%;
   background: rgba(244, 237, 220, 0.93);
   border-left: 3px solid var(--ldr-sage);
   border-radius: 4px;
   padding: 1em 1.3em;
 }
-.ldr-image-full__caption .eyebrow { font-size: 0.7rem; margin: 0 0 0.4em; color: var(--ldr-sage); }
-.ldr-image-full__caption h3 { font-size: 1.35rem; margin: 0 0 0.25em; }
-.ldr-image-full__caption h3::after { content: none; }
-.ldr-image-full__caption p { font-size: 0.95rem; font-style: italic; color: var(--ldr-ink-soft); margin: 0; }
+.ldr-image-full__caption .eyebrow {
+  font-size: 0.7rem;
+  margin: 0 0 0.4em;
+  color: var(--ldr-sage);
+}
+.ldr-image-full__caption h3 {
+  font-size: 1.35rem;
+  margin: 0 0 0.25em;
+}
+.ldr-image-full__caption h3::after {
+  content: none;
+}
+.ldr-image-full__caption p {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--ldr-ink-soft);
+  margin: 0;
+}
 .ldr-image-full__credit {
   position: absolute;
-  right: 6%; bottom: 7%;
-  font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+  right: 6%;
+  bottom: 7%;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: rgba(255, 255, 255, 0.85);
   font-variant: small-caps;
 }
@@ -284,10 +434,25 @@
   justify-content: center;
   padding: 7.5% 7%;
 }
-.ldr-image-side__text .eyebrow { font-size: 0.7rem; margin: 0 0 0.9em; color: var(--ldr-sage); }
-.ldr-image-side__text h2 { font-size: 1.75rem; line-height: 1.12; margin: 0 0 0.4em; }
-.ldr-image-side__text h2::after { content: none; }
-.ldr-image-side__caption { font-size: 1.05rem; font-style: italic; color: var(--ldr-ink-soft); margin: 0; }
+.ldr-image-side__text .eyebrow {
+  font-size: 0.7rem;
+  margin: 0 0 0.9em;
+  color: var(--ldr-sage);
+}
+.ldr-image-side__text h2 {
+  font-size: 1.75rem;
+  line-height: 1.12;
+  margin: 0 0 0.4em;
+}
+.ldr-image-side__text h2::after {
+  content: none;
+}
+.ldr-image-side__caption {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--ldr-ink-soft);
+  margin: 0;
+}
 .ldr-image-side__panel {
   flex: 0 0 44%;
   position: relative;
@@ -297,15 +462,20 @@
   /* Thin sage hairline along the seam between text column and image. */
   border-left: 1px solid var(--ldr-sage);
 }
-.ldr-image-side--flip { flex-direction: row-reverse; }
+.ldr-image-side--flip {
+  flex-direction: row-reverse;
+}
 .ldr-image-side--flip .ldr-image-side__panel {
   border-left: 0;
   border-right: 1px solid var(--ldr-sage);
 }
 .ldr-image-side__credit {
   position: absolute;
-  right: 6%; bottom: 7%;
-  font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+  right: 6%;
+  bottom: 7%;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: rgba(255, 255, 255, 0.85);
   font-variant: small-caps;
 }
@@ -313,15 +483,39 @@
 /* End / thanks ------------------------------------------------------------- */
 .slidev-layout.ldr-end {
   background-color: var(--ldr-paper-deep);
-  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
-.ldr-end :is(h1) { font-size: 2.8rem; margin: 0.5em 0 0.1em; }
-.ldr-end :is(h1)::after {
-  content: ""; display: block; width: 40px; height: 2px;
-  background: var(--ldr-forest); margin: 0.2em auto 0;
+.ldr-end :is(h1) {
+  font-size: 2.8rem;
+  margin: 0.5em 0 0.1em;
 }
-.ldr-end :is(p) { font-size: 1.15rem; font-style: italic; color: var(--ldr-ink-soft); margin: 0.9em 0 1.2em; }
-.ldr-end__contact { font-style: normal !important; font-size: 0.95rem; letter-spacing: 0.06em; color: var(--ldr-ink-soft); }
-.ldr-mark { color: var(--ldr-forest); }
-.ldr-mark .seed { color: var(--ldr-maple); }
+.ldr-end :is(h1)::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--ldr-forest);
+  margin: 0.2em auto 0;
+}
+.ldr-end :is(p) {
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--ldr-ink-soft);
+  margin: 0.9em 0 1.2em;
+}
+.ldr-end__contact {
+  font-style: normal !important;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  color: var(--ldr-ink-soft);
+}
+.ldr-mark {
+  color: var(--ldr-forest);
+}
+.ldr-mark .seed {
+  color: var(--ldr-maple);
+}
