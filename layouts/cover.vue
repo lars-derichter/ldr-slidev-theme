@@ -31,7 +31,7 @@ defineProps<{
     <div class="ldr-cover__by" v-if="presenter || affiliation">
       <span class="name" v-if="presenter">{{ presenter }}</span>
       <span class="sep" v-if="presenter && affiliation">·</span>
-      <span v-if="affiliation">{{ affiliation }}</span>
+      <span class="ldr-cover__aff" v-if="affiliation">{{ affiliation }}</span>
     </div>
   </div>
 </template>
