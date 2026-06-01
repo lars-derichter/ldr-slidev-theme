@@ -18,11 +18,35 @@ npm; consumed directly from this Git repository.
 | `default`      | Content slides — heading + list, code, prose                                 |
 | `two-cols-ldr` | Full-width heading over two columns (`::left::` / `::right::`)               |
 | `quote`        | Large pull-quote (`author`)                                                  |
+| `image-side`   | Image beside a text column (`image`, `eyebrow`, `caption`, `credit`, `side`) |
 | `image-full`   | Full-bleed image, overlaid caption (`image`, `eyebrow`, `caption`, `credit`) |
 | `end`          | Closing / thanks slide (`contact`)                                           |
 
 Every custom layout is exercised in [example.md](example.md). Frontmatter
 options are documented at the top of each file in [layouts/](layouts/).
+
+## Styling helpers in Markdown
+
+With `mdc: true` in the headmatter, Slidev enables [MDC
+syntax](https://sli.dev/features/mdc), which lets you attach classes to Markdown
+without writing HTML. **The class must sit on the same line as the text.**
+
+`.eyebrow` renders a small-caps, letterspaced label (forest by default; sage on
+content and image slides):
+
+```md
+Voorbeeld {.eyebrow}
+```
+
+Colour utilities override the colour of any element — pair them with `.eyebrow`
+or use them on their own. Available: `forest`, `forest-deep`, `sage`, `maple`,
+`ochre`, `ink`, `ink-soft`, `ink-faint`.
+
+```md
+Top down {.eyebrow.sage}
+Bottom up {.eyebrow.maple}
+A [maple]{.maple} word inline.
+```
 
 ## Use it in a presentation
 
@@ -62,16 +86,16 @@ breaks the deck.
 
 ## Structure
 
-| Path                | Purpose                                            |
-| ------------------- | -------------------------------------------------- |
-| `styles/index.ts`   | Global style entry point Slidev imports            |
-| `styles/layout.css` | Tokens, typography, and every layout's look        |
-| `styles/code.css`   | Code-panel framing (mono font, inset, maple spine) |
-| `setup/shiki.ts`    | Custom Shiki theme matching the palette            |
-| `layouts/`          | Custom `.vue` slide layouts                        |
-| `components/`       | Auto-imported `.vue` components (`Footer`)         |
-| `public/`           | Assets served at deck root (preview image)         |
-| `example.md`        | Preview deck (`theme: ./`)                         |
+| Path                | Purpose                                           |
+| ------------------- | ------------------------------------------------- |
+| `styles/index.ts`   | Global style entry point Slidev imports           |
+| `styles/layout.css` | Tokens, typography, and every layout's look       |
+| `styles/code.css`   | Code-panel framing (mono font, inset, sage spine) |
+| `setup/shiki.ts`    | Custom Shiki theme matching the palette           |
+| `layouts/`          | Custom `.vue` slide layouts                       |
+| `components/`       | Auto-imported `.vue` components (`Footer`)        |
+| `public/`           | Assets served at deck root (preview image)        |
+| `example.md`        | Preview deck (`theme: ./`)                        |
 
 See the [Slidev theme docs](https://sli.dev/guide/write-theme) for what a theme
 can contribute.
