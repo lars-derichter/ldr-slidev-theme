@@ -7,13 +7,13 @@
   Body: content before `::left::` spans the full width (use it for the heading);
   `::left::` and `::right::` fill the two columns.
 
-  Example:
+  Example (eyebrow label via MDC — needs `mdc: true` in the headmatter):
     # Two ways to revise
     ::left::
-    <div class="ldr-eyebrow" style="color: var(--ldr-sage)">Top down</div>
+    Top down {.eyebrow.sage}
     Start from the claim...
     ::right::
-    <div class="ldr-eyebrow" style="color: var(--ldr-maple)">Bottom up</div>
+    Bottom up {.eyebrow.maple}
     Start from the words...
 -->
 <template>

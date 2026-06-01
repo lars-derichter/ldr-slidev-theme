@@ -116,6 +116,23 @@
   margin: 0;
 }
 
+/* Eyebrows that label content or a figure take sage — on content/code (default
+   layout) and on the image layouts (handled in their own blocks). Cover and
+   section eyebrows stay forest, reading as kickers rather than labels. */
+.slidev-layout.default .eyebrow { color: var(--ldr-sage); }
+
+/* Palette text-colour utilities. Apply in Markdown (MDC) on the same line as the
+   text, e.g. `Bottom up {.eyebrow.maple}` or `Heads up {.maple}`. Marked
+   !important so they win over the scoped eyebrow and heading colours above. */
+.forest      { color: var(--ldr-forest) !important; }
+.forest-deep { color: var(--ldr-forest-deep) !important; }
+.sage        { color: var(--ldr-sage) !important; }
+.maple       { color: var(--ldr-maple) !important; }
+.ochre       { color: var(--ldr-ochre) !important; }
+.ink         { color: var(--ldr-ink) !important; }
+.ink-soft    { color: var(--ldr-ink-soft) !important; }
+.ink-faint   { color: var(--ldr-ink-faint) !important; }
+
 /* A reusable short rule, e.g. <hr class="ldr-rule-maple">. ----------------- */
 .ldr-rule-maple {
   height: 2px; border: 0; width: 46px;

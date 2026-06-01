@@ -41,21 +41,23 @@ Where a good sentence begins, and why the reader keeps reading.
 layout: two-cols-ldr
 ---
 
-# Two ways to revise
+## Two ways to revise
 
 ::left::
 
-<div class="ldr-eyebrow" style="color: var(--ldr-sage)">Top down</div>
+Top down {.eyebrow.sage}
 
 Start from the claim. Check that every paragraph earns its place and serves the argument before you polish a single sentence.
 
 ::right::
 
-<div class="ldr-eyebrow" style="color: var(--ldr-maple)">Bottom up</div>
+Bottom up {.eyebrow.maple}
 
 Start from the words. Cut the dead ones, tighten the verbs, and let the structure reveal itself as the prose gets leaner.
 
 ---
+
+Example {.eyebrow}
 
 ## Calculate the average
 
