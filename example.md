@@ -98,6 +98,32 @@ credit: Photo · Unsplash
 ### A canopy is a kind of paragraph
 
 ---
+layout: image-side
+image: /forest.jpg
+side: left
+fit: contain
+eyebrow: Figure 4
+caption: Shown whole, on the parchment ground.
+---
+
+## When cropping would lie
+
+`fit: contain` fits the whole image inside the panel instead of filling it. Use
+it for screenshots, diagrams, and anything with edges that carry meaning.
+
+---
+
+Figure 5 {.eyebrow}
+
+## An image in the flow
+
+A Markdown image on its own line is centred, capped at `15rem`, and framed with
+a hairline. Override the height with a utility class. Note the path: Markdown
+images are resolved by Vite and need a **relative** path, not `/forest.jpg`.
+
+![A stand of trees](./public/forest.jpg){.max-h-40}
+
+---
 layout: end
 contact: lars.derichter@thomasmore.be · @ldr
 ---

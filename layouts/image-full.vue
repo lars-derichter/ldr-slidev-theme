@@ -7,6 +7,9 @@
     eyebrow: Figure 3           # small label in the caption (optional)
     caption: Many small parts, one continuous shape.   # italic line (optional)
     credit: Photo · Unsplash    # corner credit (optional)
+    fit: contain                # cover (default) fills and crops; contain fits
+                                # the whole image — use it for screenshots,
+                                # diagrams and anything you must not crop
 
   Body: the caption heading as `### ...` (kept short).
 -->
@@ -18,6 +21,7 @@ const props = defineProps<{
   eyebrow?: string
   caption?: string
   credit?: string
+  fit?: 'cover' | 'contain'
 }>()
 
 // Slidev only rewrites the `--base` path for assets it parses (markdown
@@ -35,6 +39,7 @@ const bg = computed(() => {
 <template>
   <div
     class="slidev-layout ldr-image-full"
+    :class="{ 'ldr-fit-contain': fit === 'contain' }"
     :style="bg ? { backgroundImage: `url(${bg})` } : undefined"
   >
     <div class="ldr-image-full__caption">

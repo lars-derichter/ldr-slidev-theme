@@ -11,19 +11,46 @@ npm; consumed directly from this Git repository.
 
 ## Layouts
 
-| Layout         | For                                                                          |
-| -------------- | ---------------------------------------------------------------------------- |
-| `cover`        | Opening slide (`eyebrow`, `presenter`, `affiliation`)                        |
-| `section`      | Chapter divider (`number`, `eyebrow`)                                        |
-| `default`      | Content slides — heading + list, code, prose                                 |
-| `two-cols-ldr` | Full-width heading over two columns (`::left::` / `::right::`)               |
-| `quote`        | Large pull-quote (`author`)                                                  |
-| `image-side`   | Image beside a text column (`image`, `eyebrow`, `caption`, `credit`, `side`) |
-| `image-full`   | Full-bleed image, overlaid caption (`image`, `eyebrow`, `caption`, `credit`) |
-| `end`          | Closing / thanks slide (`contact`)                                           |
+| Layout         | For                                                                                 |
+| -------------- | ----------------------------------------------------------------------------------- |
+| `cover`        | Opening slide (`eyebrow`, `presenter`, `affiliation`)                               |
+| `section`      | Chapter divider (`number`, `eyebrow`)                                               |
+| `default`      | Content slides — heading + list, code, prose                                        |
+| `two-cols-ldr` | Full-width heading over two columns (`::left::` / `::right::`)                      |
+| `quote`        | Large pull-quote (`author`)                                                         |
+| `image-side`   | Image beside a text column (`image`, `eyebrow`, `caption`, `credit`, `side`, `fit`) |
+| `image-full`   | Full-bleed image, overlaid caption (`image`, `eyebrow`, `caption`, `credit`, `fit`) |
+| `end`          | Closing / thanks slide (`contact`)                                                  |
 
 Every custom layout is exercised in [example.md](example.md). Frontmatter
 options are documented at the top of each file in [layouts/](layouts/).
+
+Both image layouts crop to fill by default (`fit: cover`), which suits
+photography. Set `fit: contain` for anything you must not crop — screenshots,
+diagrams, tall artwork; the image is then shown whole on the parchment ground.
+
+## Images in Markdown
+
+A Markdown image on a line of its own is centred, capped at `15rem` tall, and
+framed with a hairline on the panel ground, so a screenshot reads as an inset
+surface. Images that sit inline in a sentence are left alone.
+
+Override the height with an [UnoCSS](https://unocss.dev) utility via MDC:
+
+```md
+![Sprite sheet](./public/sprite-sheet.png){.max-h-20}
+```
+
+**Mind the path.** The two kinds of image are resolved by different machinery:
+
+| Where                      | Path                             | Why                                                                    |
+| -------------------------- | -------------------------------- | ---------------------------------------------------------------------- |
+| `image:` frontmatter       | `/forest.jpg`                    | Handed to CSS `url()`; the layout prepends `BASE_URL` itself           |
+| Markdown `![]()` / `<img>` | `./public/forest.jpg` (relative) | Compiled to a Vite import, which hashes the asset and applies the base |
+
+A root-relative `![](/forest.jpg)` works in `npm run dev` but **fails the
+build** with `resolves outside of Vite server.fs.allow`. From a slide file in
+`pages/`, the path is `../public/forest.jpg`.
 
 ## Styling helpers in Markdown
 

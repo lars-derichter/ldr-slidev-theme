@@ -8,6 +8,9 @@
     caption: A margin gives...  # italic line under the heading (optional)
     credit: Photo · Unsplash    # corner credit over the image (optional)
     side: right                 # which side the image sits on (default: right)
+    fit: contain                # cover (default) fills and crops the panel;
+                                # contain fits the whole image — use it for
+                                # screenshots, diagrams and tall artwork
 
   Body: the heading as `## ...` plus any supporting text.
 -->
@@ -20,6 +23,7 @@ const props = defineProps<{
   caption?: string
   credit?: string
   side?: 'left' | 'right'
+  fit?: 'cover' | 'contain'
 }>()
 
 // Same reasoning as image-full: a frontmatter path handed to CSS url() is
@@ -47,6 +51,7 @@ const imageLeft = computed(() => props.side === 'left')
     </div>
     <div
       class="ldr-image-side__panel"
+      :class="{ 'ldr-fit-contain': fit === 'contain' }"
       :style="bg ? { backgroundImage: `url(${bg})` } : undefined"
     >
       <div class="ldr-image-side__credit" v-if="credit">{{ credit }}</div>

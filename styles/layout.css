@@ -152,6 +152,26 @@
   color: var(--ldr-maple);
 }
 
+/* Images ------------------------------------------------------------------- */
+/* A standalone Markdown image is its own paragraph. Centre it, keep it inside
+   the slide, and frame it with the same hairline and panel ground the code
+   blocks use, so a screenshot reads as an inset surface rather than a floating
+   cutout. `:only-child` deliberately skips inline runs of images (licence
+   badges, icons in a sentence …), which should stay in the text flow.
+
+   Sizing is in rem, never vh: the slide is a fixed canvas that gets
+   transform-scaled, so vh would measure the browser window instead. 15rem
+   leaves room for a heading, a few lines, and the footer. */
+.slidev-layout p > img:only-child {
+  display: block;
+  max-width: 100%;
+  max-height: 15rem;
+  margin: 0.8em auto 0;
+  background: var(--ldr-panel);
+  border: 1px solid var(--ldr-rule);
+  border-radius: 4px;
+}
+
 /* Shared eyebrow (letterspaced small-cap label). --------------------------- */
 .eyebrow {
   font-size: 0.8rem;
@@ -478,6 +498,18 @@
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.85);
   font-variant: small-caps;
+}
+
+/* `fit: contain` on the image layouts -------------------------------------- */
+/* Photography is happy being cropped to fill; screenshots, diagrams and tall
+   artwork are not. `fit: contain` shows the whole image and lets the parchment
+   ground show around it. Declared after both image blocks so it wins on source
+   order against their `background-size: cover`. */
+.slidev-layout.ldr-fit-contain,
+.slidev-layout .ldr-fit-contain {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* End / thanks ------------------------------------------------------------- */

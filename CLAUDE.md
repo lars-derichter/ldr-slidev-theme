@@ -34,6 +34,13 @@ custom layouts: `cover`, `section`, `default` (adds the footer), `two-cols-ldr`,
 `quote`, `image-full`, `image-side`, and `end`. Palette/type live as `--ldr-*` CSS variables
 at the top of `layout.css`. Keep additions minimal and intentional.
 
+Both image layouts take `fit: cover | contain` (`cover` is the default; use
+`contain` for screenshots and diagrams). Standalone Markdown images are styled
+generically in `layout.css` — centred, capped at `15rem`, hairline frame on the
+panel ground. Size anything inside a slide in `rem`/`px`, **never `vh`**: the
+slide is a fixed canvas that gets transform-scaled, so viewport units measure
+the browser window instead.
+
 `example.md` uses `theme: ./` to preview the theme locally (`npm run dev`).
 
 ## Conventions
