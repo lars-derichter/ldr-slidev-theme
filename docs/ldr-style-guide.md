@@ -32,21 +32,21 @@ Five principles that everything else serves:
 
 ### Palette
 
-| Name          | Hex       | Character                    |
-| ------------- | --------- | ---------------------------- |
-| Parchment     | `#F4EDDC` | Warm cream ground            |
-| Deep parchment| `#EFE7D2` | Slightly deeper ground       |
-| Panel         | `#EDE4CE` | Inset / code / callout fill  |
-| Warm white    | `#FBF8F0` | Near-white page (long text)  |
-| Ink           | `#2A2925` | Warm near-black, body text   |
-| Ink soft      | `#5E584C` | Muted ink, subtitles/captions|
-| Ink faint     | `#8A8270` | Faint ink, meta/credits      |
-| Forest        | `#38543E` | Primary accent (green)       |
-| Forest deep   | `#2C4632` | Darker green, inline code    |
-| Sage          | `#7E9A7C` | Soft secondary green         |
-| Maple         | `#9E3B2D` | Accent spark (autumn red)    |
-| Ochre         | `#B07D2B` | Warm tertiary (numbers/data) |
-| Rule          | `#D8CDB3` | Faint hairline               |
+| Name           | Hex       | Character                     |
+| -------------- | --------- | ----------------------------- |
+| Parchment      | `#F4EDDC` | Warm cream ground             |
+| Deep parchment | `#EFE7D2` | Slightly deeper ground        |
+| Panel          | `#EDE4CE` | Inset / code / callout fill   |
+| Warm white     | `#FBF8F0` | Near-white page (long text)   |
+| Ink            | `#2A2925` | Warm near-black, body text    |
+| Ink soft       | `#5E584C` | Muted ink, subtitles/captions |
+| Ink faint      | `#8A8270` | Faint ink, meta/credits       |
+| Forest         | `#38543E` | Primary accent (green)        |
+| Forest deep    | `#2C4632` | Darker green, inline code     |
+| Sage           | `#7E9A7C` | Soft secondary green          |
+| Maple          | `#9E3B2D` | Accent spark (autumn red)     |
+| Ochre          | `#B07D2B` | Warm tertiary (numbers/data)  |
+| Rule           | `#D8CDB3` | Faint hairline                |
 
 `Warm white` is the only colour not in the slide theme; it is added here for
 long-form body pages (see [§6](#6-backgrounds-the-parchment-question)).
@@ -62,7 +62,7 @@ long-form body pages (see [§6](#6-backgrounds-the-parchment-question)).
   structural rules under headings, the "active" colour.
 - **Sage (soft accent)** — hairlines and dividers, list markers, figure/label
   eyebrows, pull-quote marks, code framing, italic emphasis, running footers.
-  Sage is *quiet structure*.
+  Sage is _quiet structure_.
 - **Maple (spark accent)** — used sparingly: a title, a page number, a single
   rule, a quote attribution, an ordered-list number. One spark per view.
 - **Ochre** — numeric and data highlights (figures, code numerals, chart series).
@@ -102,12 +102,12 @@ long-form body pages (see [§6](#6-backgrounds-the-parchment-question)).
 
 The generalisable rule across documents:
 
-| Level      | Colour  | Notes                                    |
-| ---------- | ------- | ---------------------------------------- |
-| H1 / title | Maple   | The statement                            |
-| H2         | Forest  | Major section                            |
-| H3         | Maple   | Sub-section                              |
-| H4 and below | Ink   | Quiet                                    |
+| Level        | Colour | Notes         |
+| ------------ | ------ | ------------- |
+| H1 / title   | Maple  | The statement |
+| H2           | Forest | Major section |
+| H3           | Maple  | Sub-section   |
+| H4 and below | Ink    | Quiet         |
 
 Headings are bold serif, tight leading (~1.1), slightly negative tracking
 (`-0.01em`). Sentence case — never Title Case, never ALL CAPS (except the
