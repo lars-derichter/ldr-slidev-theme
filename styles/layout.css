@@ -187,6 +187,33 @@
   margin-bottom: 0;
 }
 
+/* Tables — thin marks, not boxes: letter-spaced forest labels over a forest
+   hairline, faint rules between rows, no fills or vertical lines. Sized to
+   the content rather than stretched across the slide. Markdown column
+   alignment (`---:`) still applies through inline styles. */
+.slidev-layout table {
+  border-collapse: collapse;
+  margin: 0 0 1em;
+}
+.slidev-layout th {
+  font-size: 0.8em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--ldr-forest);
+  border-bottom: 1px solid var(--ldr-forest);
+}
+.slidev-layout td {
+  border-bottom: 1px solid var(--ldr-rule);
+}
+.slidev-layout :is(th, td) {
+  padding: 0.5em 1.8em 0.5em 0;
+}
+.slidev-layout :is(th, td):last-child {
+  padding-right: 0;
+}
+
 /* Images ------------------------------------------------------------------- */
 /* A standalone Markdown image is its own paragraph. Centre it, keep it inside
    the slide, and frame it with the same hairline and panel ground the code

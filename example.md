@@ -50,6 +50,16 @@ Where a good sentence begins, and why the reader keeps reading.
 > The first draft is for you. Every draft after that is for the reader.
 
 ---
+
+## Where the words go
+
+| Draft  | Words | Cut |
+| ------ | ----: | --: |
+| First  | 2,400 |   — |
+| Second | 1,850 | 23% |
+| Final  | 1,500 | 19% |
+
+---
 layout: two-cols-ldr
 ---
 
