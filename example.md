@@ -6,7 +6,7 @@ mdc: true
 
 layout: cover
 eyebrow: A lecture in three movements
-presenter: Lars De Richter
+author: Lars De Richter
 affiliation: Thomas More Hogeschool
 ---
 

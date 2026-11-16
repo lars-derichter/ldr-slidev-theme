@@ -48,3 +48,12 @@ the browser window instead.
 - Plain CSS in `styles/` (no UnoCSS `@apply`) to keep it approachable.
 - Output docs as Markdown.
 - License: Unlicense (public domain).
+
+## Gotchas
+
+- The cover name is `author`, not `presenter`. `presenter` is Slidev's
+  presenter-mode switch (`true | 'dev' | 'build'`): a name there disables
+  presenter mode. `author` is reserved too, but only feeds
+  `<meta name="author">`. On the first slide Slidev strips reserved keys from
+  layout props, so `cover.vue` reads `author` back from the `frontmatter` prop.
+  A string `presenter` still renders (old decks), with a dev-mode warning.

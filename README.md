@@ -13,7 +13,7 @@ npm; consumed directly from this Git repository.
 
 | Layout         | For                                                                                 |
 | -------------- | ----------------------------------------------------------------------------------- |
-| `cover`        | Opening slide (`eyebrow`, `presenter`, `affiliation`)                               |
+| `cover`        | Opening slide (`eyebrow`, `author`, `affiliation`)                                  |
 | `section`      | Chapter divider (`number`, `eyebrow`)                                               |
 | `default`      | Content slides — heading + list, code, prose                                        |
 | `two-cols-ldr` | Full-width heading over two columns (`::left::` / `::right::`)                      |
