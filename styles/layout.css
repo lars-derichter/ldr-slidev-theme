@@ -142,14 +142,34 @@
   color: var(--ldr-sage);
   font-weight: 700;
 }
+
+/* Numbered lists — maple numerals. Slidev's own list styles live in
+   layouts-base.css, which only its default theme imports; custom themes
+   inherit the Tailwind reset (`list-style: none`), so the numbers must be
+   switched back on here. Level 2 drops to sage letters. */
 .slidev-layout ol {
-  padding-left: 1.3em;
+  list-style: decimal;
+  padding-left: 1.6em;
 }
 .slidev-layout ol > li {
+  padding-left: 0.2em;
   margin: 0 0 0.7em;
+  line-height: 1.45;
 }
 .slidev-layout ol > li::marker {
   color: var(--ldr-maple);
+  font-weight: 700;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.slidev-layout ol ol {
+  list-style: lower-alpha;
+  margin-top: 0.5em;
+}
+.slidev-layout :is(ul, ol) ol > li::marker {
+  color: var(--ldr-sage);
+}
+.slidev-layout :is(ul, ol) :is(ul, ol) {
+  margin-top: 0.5em;
 }
 
 /* Images ------------------------------------------------------------------- */

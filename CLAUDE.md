@@ -51,6 +51,12 @@ the browser window instead.
 
 ## Gotchas
 
+- Slidev's base content styles (`@slidev/client/styles/layouts-base.css`:
+  list markers, blockquote box, tables) are imported only by Slidev's default
+  theme. This theme starts from the Tailwind reset (`list-style: none`,
+  unstyled blockquotes and tables), so every content element needs its own
+  rule in `styles/layout.css`.
+
 - The cover name is `author`, not `presenter`. `presenter` is Slidev's
   presenter-mode switch (`true | 'dev' | 'build'`): a name there disables
   presenter mode. `author` is reserved too, but only feeds

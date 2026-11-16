@@ -38,6 +38,16 @@ Where a good sentence begins, and why the reader keeps reading.
 - **Read it aloud.** If you run out of [breath,](https://example.com) the reader already has.
 
 ---
+
+## Revising in order
+
+1. Read the draft once, without a pen.
+2. Fix the structure.
+   1. Move paragraphs before you rewrite them.
+   2. Cut what no longer earns its place.
+3. Only then polish the sentences.
+
+---
 layout: two-cols-ldr
 ---
 
