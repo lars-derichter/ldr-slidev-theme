@@ -147,6 +147,8 @@ caption/eyebrow ≈ 0.8–0.9×. Body line-height ~1.5; headings ~1.1.
 - **Lists:** use an **em-dash "—" marker in sage** rather than a bullet;
   numbered lists use bold maple numerals, with sage letters at the second
   level. Space items generously.
+- **Block quotes** in running text: an inset block on the panel fill with a
+  3px sage left spine, set in italic.
 - **Pull-quotes:** large italic serif, with an oversized opening quotation mark
   in sage; attribution in small letter-spaced maple.
 - **Code / monospace:** IBM Plex Mono on a panel fill, a sage left spine, subtle

@@ -172,6 +172,21 @@
   margin-top: 0.5em;
 }
 
+/* Blockquotes on content slides — an inset block like the code panels: panel
+   fill, 3px sage spine, italic text. The quote layout has its own blockquote
+   design (below) and is excluded from both rules: it doesn't reset the panel
+   background, and its attribution spacing relies on the last margin. */
+.slidev-layout:not(.ldr-quote) blockquote {
+  background: var(--ldr-panel);
+  border-left: 3px solid var(--ldr-sage);
+  padding: 0.7em 1.2em;
+  margin: 0 0 1em;
+  font-style: italic;
+}
+.slidev-layout:not(.ldr-quote) blockquote > :last-child {
+  margin-bottom: 0;
+}
+
 /* Images ------------------------------------------------------------------- */
 /* A standalone Markdown image is its own paragraph. Centre it, keep it inside
    the slide, and frame it with the same hairline and panel ground the code

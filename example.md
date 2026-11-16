@@ -47,6 +47,8 @@ Where a good sentence begins, and why the reader keeps reading.
    2. Cut what no longer earns its place.
 3. Only then polish the sentences.
 
+> The first draft is for you. Every draft after that is for the reader.
+
 ---
 layout: two-cols-ldr
 ---
